@@ -1,0 +1,178 @@
+                                 More on Iterative Control Statements
+1. Write a program to print MySirG N times on the screen.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many times do you want to print MySirG on the Screen : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        printf("MySirG\n");
+
+    return 0;
+}
+
+2. Write a program to print the first N natural numbers.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many natural numbers do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        printf("%d\n", i);
+
+    return 0;
+}
+
+3. Write a program to print the first N natural numbers in reverse order
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many natural numbers do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    for (int i = n; i >= 1; i--)
+        printf("%d\n", i);
+
+    return 0;
+}
+
+4. Write a program to print the first N odd natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first odd natural numbers do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    int k = 0;
+    for (int i = 1;; i++)
+    {
+        if (i % 2 != 0)
+        {
+            printf("%d\n", i);
+            k++;
+        }
+        if (k == n)
+            break;
+    }
+
+    return 0;
+}
+
+5. Write a program to print the first N odd natural numbers in reverse order.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first odd natural numbers do you want to print on the Screen in reverse order : ");
+    scanf("%d", &n);
+
+    int k = 0;
+    for (int i = 2 * n;; i--)
+    {
+        if (i % 2 != 0)
+        {
+            printf("%d\n", i);
+            k++;
+        }
+        if (k == n)
+            break;
+    }
+
+    return 0;
+}
+
+6. Write a program to print the first N even natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first even natural numbers do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= 2 * n; i = i + 2)
+        printf("%d\n", i);
+
+    return 0;
+}
+
+7. Write a program to print the first N even natural numbers in reverse order
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first even natural numbers do you want to print on the Screen in reverse order: ");
+    scanf("%d", &n);
+
+    for (int i = 2 * n; i > 0; i = i - 2)
+        printf("%d\n", i);
+
+    return 0;
+}
+
+8. Write a program to print squares of the first N natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first natural numbers squares do you want to print on the Screen ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        printf("%d\n", i * i);
+
+    return 0;
+}
+
+9. Write a program to print cubes of the first N natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("How many first natural numbers cubes do you want to print on the Screen ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        printf("%d\n", i * i * i);
+
+    return 0;
+}
+
+10. Write a program to print a table of N.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Which table do you want to print on the screen : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= 10; i++)
+        printf("%d * %d = %d\n", n, i, n * i);
+
+    return 0;
+}

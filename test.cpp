@@ -1,6 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    printf("\\\\");
+int main()
+{
+    int n;
+    printf("Which table do you want to print on the screen : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= 10; i++)
+        printf("%d * %d = %d\n", n, i, n * i);
+
     return 0;
 }
