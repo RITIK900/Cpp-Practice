@@ -1,0 +1,223 @@
+                        Iterative Control Statements (Part - 2)
+
+1. Write a program to find the Nth term of the Fibonnaci series.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the term of fibinacci series Which you want to print? : ");
+    scanf("%d", &n);
+    int a = 0, b = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        int temp = b;
+        b = a + b;
+        a = temp;
+    }
+    if (n >= 1)
+        printf("The %dth term of fibinacci series is %d", n, b);
+    else
+        printf("The %dth term of fibinacci series is %d", n, a);
+    return 0;
+}
+
+
+2. Write a program to print first N terms of Fibonacci series
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the number of terms of fibinacci series Which you want to print? : ");
+    scanf("%d", &n);
+    int a = 0, b = 1;
+
+    if (n == 1)
+    {
+        printf("%d", a);
+        return 0;
+    }
+    if (n == 2)
+    {
+        printf("%d %d", a, b);
+        return 0;
+    }
+    printf("%d %d ", a, b);
+    for (int i = 3; i <= n; i++)
+    {
+        int temp = b;
+        b = a + b;
+        a = temp;
+        printf("%d ", b);
+    }
+    return 0;
+}
+
+
+3. Write a program to check whether a given number is there in the Fibonacci
+series or not.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the number to check the availability in fibonacci series : ");
+    scanf("%d", &n);
+    int a = 0, b = 1;
+
+    if ((n == 0) || (n == 1))
+    {
+        printf("Number %d is present in fibonacci series.", n);
+        return 0;
+    }
+    for (int i = 3; b <= n; i++)
+    {
+        int temp = b;
+        b = a + b;
+        a = temp;
+        if (b == n)
+        {
+            printf("Number %d is present in fibonacci series.", n);
+            return 0;
+        }
+    }
+    printf("Number %d is not present in fibonacci series.", n);
+    return 0;
+}
+
+
+4. Write a program to calculate HCF of two numbers.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int a, b;
+    printf("Enter the two numbers to calculate HCF : ");
+    scanf("%d%d", &a, &b);
+
+    printf("%d", HCF(a, b));
+    return 0;
+}
+
+
+5. Write a program to check whether two given numbers are co-prime
+numbers or not.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int a, b;
+    printf("Enter the two numbers to calculate HCF : ");
+    scanf("%d%d", &a, &b);
+
+    // Code
+
+    return 0;
+}
+
+
+6. Write a program to print all Prime numbers under 100.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    for (int i = 1; i <= 100; i++)
+    {
+        if (checkPrime(i))
+            printf("%d ", i);
+    }
+    return 0;
+}
+
+
+7. Write a program to print all Prime numbers between two given numbers.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int a, b;
+    printf("Enter two numbers : ");
+    scanf("%d%d", &a, &b);
+    for (int i = a; i <= b; i++)
+    {
+        if (checkPrime(i))
+            printf("%d ", i);
+    }
+    return 0;
+}
+
+8. Write a program to find next Prime number of a given number
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d", &n);
+    int i = n + 1;
+    while (i)
+    {
+        if (checkPrime(i))
+        {
+            printf("%d", i);
+            break;
+        }
+        i++;
+    }
+    return 0;
+}
+
+
+9. Write a program to check whether a given number is an Armstrong number
+or not
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the number to check armstrong or not? : ");
+    scanf("%d", &n);
+
+    int digitSum = 0, t = n;
+    while (t)
+    {
+        digitSum += (t % 10) * (t % 10) * (t % 10);
+        t = t / 10;
+    }
+    if (digitSum == n)
+        printf("Number %d is Armstrong number.", n);
+    else
+        printf("Number %d is not a Armstrong number.", n);
+    return 0;
+}
+
+
+10. Write a program to print all Armstrong numbers under 100,
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    for (int i = 0; i <= 100; i++)
+    {
+        if (checkArmStrong(i))
+            printf("%d ", i);
+    }
+    return 0;
+}

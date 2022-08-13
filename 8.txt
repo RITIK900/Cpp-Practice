@@ -1,0 +1,16 @@
+Assignment - 8 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+Pattern Problems
+Write a program to draw the following patterns:
+1.
+2.
+3.
+4.
+5.
+6. 7. 8.
+9. 10. 11. 12.
+.
+13.
+14.
+1
+5. 16. 17. 18.
+19.

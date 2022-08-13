@@ -1,0 +1,159 @@
+                                          Pointers
+
+1. Write a function to swap values of two in variables of calling function. (TSRS)
+
+#include <stdio.h>
+
+void swap(int *x, int *y)
+{
+    int t;
+    t = *x;
+    *x = *y;
+    *y = t;
+}
+
+int main()
+{
+    int a, b;
+    printf("Enter the two numbers : ");
+    scanf("%d %d", &a, &b);
+    swap(&a, &b);
+    printf("a = %d, b = %d", a, b);
+    return 0;
+}
+
+2. Write a function to swap strings of two char arrays of calling functions. (TSRS)
+
+/*
+#include <stdio.h>
+
+void swap(char *x, char *y)
+{
+    char *t=x;
+    //*t = *x;
+    *x = *y;
+    *y = *t;
+}
+
+int main()
+{
+    char a[]={'P','u','t','r','a'};
+    char b[]={'B','h','u','m','i'};
+    swap(a, b);
+    printf("a = %s, b = %s", a, b);
+    return 0;
+}*/
+
+3. Write a function to sort an array of int type values. [ void sort(int *ptr,int size); ]
+
+#include <stdio.h>
+
+void sort(int *ptr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (ptr[i] > ptr[j])
+            {
+                int temp = ptr[i];
+                ptr[i] = ptr[j];
+                ptr[j] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int size = 9;
+    int a[] = {5, 6, 7, 2, 3, 9, 5, 3, 1};
+    sort(a, size);
+    for (int i = 0; i < size; i++)
+        printf("%d ", a[i]);
+    return 0;
+}
+
+4. Write a program in C to demonstrate how to handle the pointers in the program.
+
+#include <stdio.h>
+
+int main()
+{
+    int x = 5;
+    int *ptr;
+    int **ptr1;
+    int ***ptr2;
+    ptr = &x;
+    ptr1 = &ptr;
+    ptr2 = &ptr1;
+
+    printf("%d %d %d %d\n", x, *ptr, **ptr1, ***ptr2);
+    printf("%d %d %d %d\n", &x, ptr, *ptr1, **ptr2);
+    printf("%d %d %d", &ptr, ptr1, *ptr2);
+    return 0;
+}
+
+5. Write a program to find the maximum number between two numbers using a pointer.
+
+#include <stdio.h>
+
+int main()
+{
+    int x, y;
+    int *ptr1 = &x, *ptr2 = &y;
+    printf("Enter two munbers : ");
+    scanf("%d%d", ptr1, ptr2);
+
+    if (*ptr1 >= *ptr2)
+        printf("Maximum = %d", *ptr1);
+    else
+        printf("Maximum = %d", *ptr2);
+    return 0;
+}
+
+6. Write a program to calculate the length of the string using a pointer.
+
+
+
+7. Write a program to count the number of vowels and consonants in a string using a pointer.
+
+
+
+8. Write a program to compute the sum of all elements in an array using pointers.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int size;
+    printf("Enter the size of the Array : ");
+    scanf("%d", &size);
+    int a[size];
+
+    inputArray(a, size);
+    sumOfAllElements(a, size);
+    return 0;
+}
+
+
+9. Write a program to print the elements of an array in reverse order.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int size;
+    printf("Enter the size of the Array : ");
+    scanf("%d", &size);
+    int a[size];
+
+    inputArray(a, size);
+    printReverse(a, size);
+    return 0;
+}
+
+
+10. Write a program to print a string in reverse using a pointer.

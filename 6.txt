@@ -1,13 +1,192 @@
                                    Use any loop
                                    
 1. Write a program to calculate sum of first N natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum = 0;
+    printf("How many natural number's sum do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        sum += i;
+
+    printf("Sum of %d natural numbers is %d.", n, sum);
+    return 0;
+}
+
 2. Write a program to calculate sum of first N even natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum = 0;
+    printf("How many first even natural number's sum do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    int k = 0;
+    for (int i = 1;; i++)
+    {
+        if (i % 2 == 0)
+        {
+            sum += i;
+            k++;
+        }
+        if (k == n)
+            break;
+    }
+
+    printf("Sum of first %d even natural numbers is %d.", n, sum);
+    return 0;
+}
+
 3. Write a program to calculate sum of first N odd natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum = 0;
+    printf("How many first odd natural number's sum do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    int k = 0;
+    for (int i = 1;; i++)
+    {
+        if (i % 2 != 0)
+        {
+            sum += i;
+            k++;
+        }
+        if (k == n)
+            break;
+    }
+
+    printf("Sum of first %d odd natural numbers is %d.", n, sum);
+    return 0;
+}
+
 4. Write a program to calculate sum of squares of first N natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum = 0;
+    printf("How many first natural number's squares sum do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    sum = (n * (n + 1) * (2 * n + 1)) / 6;
+
+    printf("Sum of first %d natural numbers squares is %d.", n, sum);
+    return 0;
+}
+
 5. Write a program to calculate sum of cubes of first N natural numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum;
+    printf("How many first natural number's cubes sum do you want to print on the Screen : ");
+    scanf("%d", &n);
+
+    sum = (n * n * (n + 1) * (n + 1)) / 4;
+
+    printf("Sum of first %d natural numbers cubes is %d.", n, sum);
+    return 0;
+}
+
 6. Write a program to calculate factorial of a number
+
+#include <stdio.h>
+
+int main()
+{
+    int n, fact = 1;
+    printf("Enter the number to get the factorial : ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= n; i++)
+        fact *= i;
+
+    printf("Factorial of %d is %d.", n, fact);
+    return 0;
+}
+
 7. Write a program to count digits in a given number
+
+#include <stdio.h>
+
+int main()
+{
+    int n, count = 0, temp;
+    printf("Enter the number to get the count of digits : ");
+    scanf("%d", &n);
+
+    temp = n;
+    while (temp > 0)
+    {
+        temp = temp / 10;
+        count++;
+    }
+
+    printf("Digits in the number %d is %d.", n, count);
+    return 0;
+}
+
 8. Write a program to check whether a given number is a Prime number or
 not
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int n, check = 1;
+    printf("Enter the number to check the number is prime or not : ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            printf("Given number %d is not a prime number.", n);
+            check = 0;
+            break;
+        }
+    }
+
+    if (check)
+        printf("Given number %d is a prime number.", n);
+    return 0;
+}
+
 9. Write a program to calculate LCM of two numbers
+
+
+
 10. Write a program to reverse a given number
+
+#include <stdio.h>
+
+int main()
+{
+    int n, temp, reverse = 0;
+    printf("Enter the number to reverse the digits : ");
+    scanf("%d", &n);
+
+    temp = n;
+    while (temp > 0)
+    {
+        reverse = reverse * 10 + temp % 10;
+        temp = temp / 10;
+    }
+
+    printf("Reverse of the given number %d is %d.", n, reverse);
+    return 0;
+}
