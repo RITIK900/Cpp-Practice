@@ -2,12 +2,23 @@ int checkPrime(int);
 int checkArmStrong(int);
 #include <math.h>
 
+int maxInArray(int *, int);
 int digitSum(int);
 int HCF(int, int);
 void inputArray(int *, int);
 void displayArray(int *, int);
 void sumOfAllElements(int *, int);
 void printReverse(int *, int);
+
+int maxInArray(int *arr, int size)
+{
+    int max = INT_MIN;
+    for (int i = 0; i < size; i++)
+        if (max < arr[i])
+            max = arr[i];
+
+    return max;
+}
 
 int checkPrime(int n)
 {

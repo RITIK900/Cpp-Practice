@@ -1,0 +1,247 @@
+                           Multi-Dimensional Array in C Language
+                           
+1. Write a program to calculate the sum of two matrices each of order 3x3.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    int matrix1[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int matrix2[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int sum[3][3];
+
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            sum[i][j] = matrix1[i][j] + matrix2[i][j];
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            printf("%d ", sum[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+2. Write a program to calculate the product of two matrices each of order 3x3.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, k, sum = 0;
+    int matrix1[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int matrix2[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int product[3][3];
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            for (int k = 0; k < 3; k++)
+                sum += matrix1[i][k] + matrix2[k][j];
+            product[i][j] = sum;
+            sum = 0;
+        }
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            printf("%d ", product[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+3. Write a program in C to find the transpose of a given matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    int matrix[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int transpose[3][3];
+
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            transpose[i][j] = matrix[j][i];
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            printf("%d ", transpose[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+4. Write a program in C to find the sum of right diagonals of a matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, sum = 0;
+    int matrix[3][3] = {1, 0, 2,
+                        1, 7, 0,
+                        1, 0, 7};
+
+    printf("Sum of right diagonal : ");
+    for (int i = 0; i < 3; i++)
+        sum += matrix[i][2 - i];
+
+    printf("%d", sum);
+    return 0;
+}
+
+5. Write a program in C to find the sum of left diagonals of a matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, sum = 0;
+    int matrix[3][3] = {1, 0, 0, 1, 7, 0, 1, 0, 7};
+
+    printf("Sum of left diagonal : ");
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (i == j)
+                sum += matrix[i][j];
+
+    printf("%d", sum);
+    return 0;
+}
+
+6. Write a program in C to find the sum of rows and columns of a Matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, sum = 0;
+    int matrix[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    printf("Sum of Rows : ");
+    for (int i = 0; i < 3; i++)
+    {
+        sum = 0;
+        for (int j = 0; j < 3; j++)
+            sum += matrix[i][j];
+        printf("%d ", sum);
+    }
+
+    printf("\nSum of Culumns : ");
+    for (int j = 0; j < 3; j++)
+    {
+        sum = 0;
+        for (int i = 0; i < 3; i++)
+            sum += matrix[i][j];
+        printf("%d ", sum);
+    }
+
+    return 0;
+}
+
+7. Write a program in C to print or display the lower triangular of a given matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    int matrix[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    printf("Upper Triangular Matrix :\n");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (i < j)
+                printf("%d ", 0);
+            else
+                printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+8. Write a program in C to print or display an upper triangular matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    int matrix[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    printf("Upper Triangular Matrix :\n");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (i > j)
+                printf("%d ", 0);
+            else
+                printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, countNonZero = 0;
+    int n = 3;
+    int matrix[3][3] = {1, 0, 0, 4, 5, 0, 7, 0, 0};
+
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (matrix[i][j] == 0)
+                countNonZero++;
+
+    if (countNonZero > (n * n / 2))
+        printf("Sparse Matrix");
+    else
+        printf("Dense Matrix");
+    return 0;
+}
+
+10. Write a program in C to find the row with maximum number of 1s.
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, count_1 = 0, maxCount_1 = 0;
+    int matrix[3][3] = {1, 0, 0, 1, 1, 0, 1, 0, 0};
+
+    int rowNo = 0; // Stores the row number which have maximum no. of 1's.
+    for (int i = 0; i < 3; i++)
+    {
+        count_1 = 0;
+        for (int j = 0; j < 3; j++)
+            if (matrix[i][j] == 1)
+                count_1++;
+        if (maxCount_1 < count_1)
+        {
+            rowNo = i;
+            maxCount_1 = count_1;
+        }
+    }
+
+    for (int i = 0; i < 3; i++)
+        printf("%d ", matrix[rowNo][i]);
+    return 0;
+}

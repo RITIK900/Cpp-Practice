@@ -1,0 +1,309 @@
+                                     Switch Case Problems
+
+1. Write a program which takes the month number as an input and display
+number of days in that month.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int n;
+    printf("Enter the month number : ");
+    scanf("%d", &n);
+
+    int i = n <= 7;
+    switch (i)
+    {
+    case false:
+        if (n % 2 == 0)
+            printf("31");
+        else
+            printf("30");
+        break;
+    case true:
+        if (n == 2)
+            printf("28/29");
+        else
+        {
+            if (n % 2 == 0)
+                printf("30");
+            else
+                printf("31");
+        }
+    default:
+        break;
+    }
+    return 0;
+}
+
+
+2. Write a menu driven program with the following options:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Exit
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+    printf("Enter the two numbers a and b : ");
+    scanf("%d%d", &a, &b);
+
+    char c;
+    fflush(stdin);
+    printf("-> Press 'a' to perform Addition \n-> Press 'b' to perform Subtraction \n-> Press 'c' to perform Multiplication \n-> Press 'd' to perform Division \n-> Press 'e' for Exit \n");
+    scanf("%c", &c);
+
+    fflush(stdin);
+    switch (c)
+    {
+    case 'a':
+        printf("The Addition of %d and %d is %d.", a, b, a + b);
+        break;
+
+    case 'b':
+        char n1;
+        printf("Which operation do you want to perform \n : Press '1' for (%d-%d).\n : Press '2' for (%d-%d),\n", a, b, b, a);
+        scanf("%c", &n1);
+        switch (n1)
+        {
+        case '1':
+            printf("The Value of (%d-%d) is %d.", a, b, a - b);
+            break;
+        case '2':
+            printf("The Value of (%d-%d) is %d.", b, a, b - a);
+            break;
+
+        default:
+            printf("You Entered wrong!!! Run the program again...");
+            break;
+        }
+        break;
+
+    case 'c':
+        printf("The mutiplication of %d and %d is %d.", a, b, a * b);
+        break;
+
+    case 'd':
+        char n;
+        printf("Which operation do you want to perform \n : Press '1' for (%d/%d).\n : Press '2' for (%d/%d).\n", a, b, b, a);
+        scanf("%c", &n);
+        switch (n)
+        {
+        case '1':
+            printf("The Value of (%d/%d) is %d ", a, b, a / b);
+            break;
+        case '2':
+            printf("The Value of (%d/%d) is %d ", b, a, b / a);
+            break;
+
+        default:
+            printf("You Entered wrong!!! Run the program again...");
+            break;
+        }
+
+        break;
+
+    case 'e':
+        printf("***Thank you for using the SOFTWARE...***");
+
+        break;
+    default:
+        printf("You Entered wrong!!! Run the program again...");
+        break;
+    }
+
+    return 0;
+}
+
+
+3. Write a program which takes the day number of a week and displays a
+unique greeting message for the day.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the day number : ");
+    scanf("%d", &n);
+
+    switch (n)
+    {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tueaday");
+        break;
+    case 3:
+        printf("Wednesday");
+        break;
+    case 4:
+        printf("Thursday");
+        break;
+    case 5:
+        printf("friday");
+        break;
+    case 6:
+        printf("Saturday");
+        break;
+    case 7:
+        printf("Sunday");
+        break;
+
+    default:
+        printf("You Entered wrong!!! Run the program again...");
+        break;
+    }
+
+    return 0;
+}
+
+
+4. Write a menu driven program with the following options:
+a. Check whether a given set of three numbers are lengths of an
+isosceles triangle or not
+b. Check whether a given set of three numbers are lengths of sides of
+a right angled triangle or not
+c. Check whether a given set of three numbers are equilateral triangle
+or not
+d. Exit
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+    printf("Enter the set of three numbers : ");
+    scanf("%d%d%d", &a, &b, &c);
+
+    fflush(stdin);
+    char n;
+    printf("Press Key----\n-> a. Check whether a given set of three numbers are lengths of an isosceles triangle or not.\n-> b. Check whether a given set of three numbers are lengths of sides of a right angled triangle or not.\n-> c. Check whether a given set of three numbers are equilateral triangle or not.\n-> d. Exit");
+
+    scanf("%c", &n);
+    fflush(stdin);
+
+    if (a < (b + c) && b < (a + c) && c < (a + b))
+    {
+        switch (n)
+        {
+        case 'a':
+            if ((a == b) || (b == c) || (c == a))
+                printf("Three sides forms a ISOSELES TRIANGLE.");
+            else
+                printf("Three sides does not forms a ISOSELES TRIANGLE.");
+            break;
+
+        case 'b':
+            if (a * a == (b * b + c * c) || b * b == (a * a + c * c) || c * c == (a * a + b * b))
+                printf("Three sides forms a RIGHT ANGLE TRIANGLE.");
+            else
+                printf("Three sides does not forms a RIGHT ANGLE TRIANGLE.");
+            break;
+
+        case 'c':
+            printf("Write the code here for EQUILATERAL Triangle.");
+            break;
+
+        case 'd':
+            printf("***Thank you for using the SOFTWARE...***");
+
+            break;
+        default:
+            printf("You Entered wrong!!! Run the program again...");
+            break;
+        }
+    }
+    else
+        printf("Set of Given three numbers is not making any triangle.");
+
+    return 0;
+}
+
+
+5. Convert the following if-else-if construct into switch case:
+if(var == 1)
+System.out.println("good");
+else if(var == 2)
+System.out.println("better");
+else if(var == 3)
+System.out.println("best");
+else
+System.out.println("invalid");
+
+#include <stdio.h>
+
+int main()
+{
+    int var;
+    printf("Enter the number : ");
+    scanf("%d", &var);
+
+    switch (var)
+    {
+    case 1:
+        printf("good");
+        break;
+    case 2:
+        printf("better");
+        break;
+    case 3:
+        printf("best");
+        break;
+    default:
+        printf("invalid");
+        break;
+    }
+
+    return 0;
+}
+
+
+6. Program to check whether a year is a leap year or not. Using switch
+statement
+
+#include <stdio.h>
+
+int main()
+{
+    int year;
+    printf("Enter the year : ");
+    scanf("%d", &year);
+
+    int i = year % 4;
+    switch (i)
+    {
+    case 0:
+        printf("Year %d is a leap year.", year);
+        break;
+
+    default:
+        printf("Year %d is not a leap year.", year);
+        break;
+    }
+
+    return 0;
+}
+
+
+7. Program to take the value from the user as input electricity unit charges
+and calculate total electricity bill according to the given condition . Using
+the switch statement.
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+
+
+8. Program to convert a positive number into a negative number and negative
+number into a positive number using a switch statement.
+9. Program to Convert even number into its upper nearest odd number
+Switch Statement.
+10. C program to find all roots of a quadratic equation using switch case
