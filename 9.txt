@@ -292,18 +292,138 @@ int main()
 }
 
 
-7. Program to take the value from the user as input electricity unit charges
-and calculate total electricity bill according to the given condition . Using
-the switch statement.
+7. Program to take the value from the user as input electricity unit charges and calculate total electricity bill according to the given condition . Using the switch statement.
 For the first 50 units Rs. 0.50/unit
 For the next 100 units Rs. 0.75/unit
 For the next 100 units Rs. 1.20/unit
 For units above 250 Rs. 1.50/unit
 An additional surcharge of 20% is added to the bill.
 
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int unit;
+    float amount = 0;
+    printf("Enter the Electricity Unit to calculate the bill amount : ");
+    scanf("%d", &unit);
+
+    int i = (unit <= 50), i2, i3, i4;
+
+    switch (i)
+    {
+    case 1:
+        amount = unit * 0.50;
+        printf("%f\n", amount);
+        unit = 0;
+        break;
+
+    default:
+        amount = 50 * 0.50;
+        printf("%f\n", amount);
+        unit = unit - 50;
+
+        i2 = (unit <= 100);
+
+        switch (i2)
+        {
+        case 1:
+            amount += 100 * 0.75;
+            printf("%f\n", amount);
+            unit = unit - 100;
+
+        default:
+            printf("Pre->%f\n", amount);
+            amount += unit * 0.75;
+            printf("%f\n", amount);
+            unit = 0;
+
+            i3 = ((unit > 0) && (unit <= 100));
+            switch (i3)
+            {
+            case 1:
+                amount += 100 * 1.20;
+                printf("%f\n", amount);
+                unit = unit - 100;
+            default:
+
+                amount += unit * 1.20;
+                printf("%f\n", amount);
+                unit = 0;
+
+                i4 = (unit > 0);
+                switch (i4)
+                {
+                case 1:
+                    amount += 1.50 * unit;
+                    printf("%f\n", amount);
+                }
+            }
+        }
+    }
+
+    amount += amount * 0.20;
+
+    printf("The total Electricity Bill Amount is %.2f Rs.", amount);
+
+    return 0;
+}
 
 8. Program to convert a positive number into a negative number and negative
 number into a positive number using a switch statement.
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d", &n);
+
+    int i = n < 0;
+    switch (i)
+    {
+    case 1:
+        n = -n;
+        printf("You Entered negative number, Converted into positive : %d.", n);
+        break;
+
+    default:
+        n = -n;
+        printf("You Entered positive number, Converted into negative : %d.", n);
+        break;
+    }
+
+    return 0;
+}
+
 9. Program to Convert even number into its upper nearest odd number
 Switch Statement.
-10. C program to find all roots of a quadratic equation using switch case
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d", &n);
+
+    int i = n % 2 == 0;
+    switch (i)
+    {
+    case 1:
+        printf("You Entered even number, next Upper nearest odd number : %d.", n + 1);
+        break;
+
+    default:
+        printf("Sorry!!! --- You Entered odd number.");
+        break;
+    }
+
+    return 0;
+}
+
+10. C program to find all roots of a quadratic equation using switch case.

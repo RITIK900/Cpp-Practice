@@ -4,9 +4,10 @@ Assignment Number -> Question Number
 3 -> 7
 6 -> 9
 7 -> 5(What is co-prime numbers?)
+9 -> 7(Debug again)
+9 -> 10(Find root of quardratic equation...)
 
-
-
+(Assignment 15 & 16 => Completed...)
 
 20 -> 2
 20 -> 6
