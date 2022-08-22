@@ -1,12 +1,98 @@
-Structure
-1. Define a structure Employee with member variables id, name, salary
+                                   Structure
+
+1. Define a structure Employee with member variables id, name, salary.
+
+struct Employee
+{
+    int id;
+    char name[20];
+    float salary;
+};
+
 2. Write a function to take input employee data from the user. [ Refer structure from
 question 1 ]
+
+#include <stdio.h>
+
+struct Employee
+{
+    int id;
+    char name[20];
+    float salary;
+};
+
+
+int main()
+{
+    struct Employee e;
+    
+    printf("Emter the Employee id : ");
+    scanf("%d",&e.id);
+    printf("Emter the Employee name : ");
+    scanf("%s",&e.name);
+    // gets(e.name);
+
+    printf("Emter the Employee salary : ");
+    scanf("%f",&e.salary);
+
+    printf("\nYou Entered : Employee id -> %d | Employee name : %s | Employee salary : %f",e.id,e.name,e.salary);
+}
+
 3. Write a function to display employee data. [ Refer structure from question 1 ]
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    struct Employee e;
+    
+    printf("Enter the Employee id : ");
+    scanf("%d",&e.id);
+    printf("Enter the Employee name : ");
+    scanf("%s",&e.name);
+    // gets(e.name);
+
+    printf("Enter the Employee salary : ");
+    scanf("%f",&e.salary);
+
+    displayEmployee(e);
+
+    return 0;
+}
+
 4. Write a function to find the highest salary employee from a given array of 10
 employees. [ Refer structure from question 1]
+
+#include <stdio.h>
+#include "myfunctions.h"
+
+int main()
+{
+    struct Employee e[10];
+
+    // Take input
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Enter the Employee-%d id : ", i);
+        scanf("%d", &e[i].id);
+        printf("Enter the Employee-%d name : ", i);
+        scanf("%s", &e[i].name);
+        printf("Enter the Employee-%d salary : ", i);
+        scanf("%f", &e[i].salary);
+    }
+
+    // Maximum Salary
+    printf("Maximum Salary of the Employee is %d.", maxSalary(e, 10));
+
+    return 0;
+}
+
 5. Write a function to sort employees according to their salaries [ refer structure from
 question 1]
+
+
+
 6. Write a function to sort employees according to their names [refer structure from
 question 1]
 7. Write a program to calculate the difference between two time periods.

@@ -1,22 +1,23 @@
 #include <stdio.h>
+#include "myfunctions.h"
 
 int main()
 {
-    int year;
-    printf("Enter the year : ");
-    scanf("%d", &year);
+    struct Employee e[10];
 
-    int i = year % 4;
-    switch (i)
+    // Take input
+    for (int i = 0; i < 10; i++)
     {
-    case 0:
-        printf("Year %d is a leap year.", year);
-        break;
-
-    default:
-        printf("Year %d is not a leap year.", year);
-        break;
+        printf("Enter the Employee-%d id : ", i);
+        scanf("%d", &e[i].id);
+        printf("Enter the Employee-%d name : ", i);
+        scanf("%s", &e[i].name);
+        printf("Enter the Employee-%d salary : ", i);
+        scanf("%f", &e[i].salary);
     }
+
+    // Maximum Salary
+    printf("Maximum Salary of the Employee is %d.", maxSalary(e, 10));
 
     return 0;
 }

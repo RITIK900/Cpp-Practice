@@ -1,5 +1,14 @@
 #include <math.h>
 
+struct Employee
+{
+    int id;
+    char name[20];
+    float salary;
+};
+
+int maxSalary(struct Employee*, int );
+void displayEmployee(struct Employee);
 int square(int);
 void fibonacciTillN(int);
 void allPrimeInBetween(int, int);
@@ -24,6 +33,23 @@ void inputArray(int *, int);
 void displayArray(int *, int);
 void sumOfAllElements(int *, int);
 void printReverse(int *, int);
+
+int maxSalary(struct Employee *e, int n)
+{
+    int max = 0 ;
+    for (int i = 0; i < n; i++)
+    {
+        if (max < e[i].salary)
+            max = e[i].salary;
+    }
+
+    return max;
+}
+
+void displayEmployee(struct Employee e)
+{
+    printf("\nYou Entered : Employee id -> %d | Employee name : %s | Employee salary : %f", e.id, e.name, e.salary);
+}
 
 int square(int n)
 {
