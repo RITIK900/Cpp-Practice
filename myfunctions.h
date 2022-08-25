@@ -43,7 +43,7 @@ int maxSalary(struct Employee *e, int n)
             max = e[i].salary;
     }
 
-    return max;
+    return max; 
 }
 
 void displayEmployee(struct Employee e)
