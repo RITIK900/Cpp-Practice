@@ -3,21 +3,23 @@
 
 int main()
 {
-    struct Employee e[10];
+    struct Employee e[2];
 
     // Take input
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 2; i++)
     {
-        printf("Enter the Employee-%d id : ", i);
+        printf("Enter the Employee-%d id : ", i+1);
         scanf("%d", &e[i].id);
-        printf("Enter the Employee-%d name : ", i);
+        printf("Enter the Employee-%d name : ", i+1);
         scanf("%s", &e[i].name);
-        printf("Enter the Employee-%d salary : ", i);
+        printf("Enter the Employee-%d salary : ", i+1);
         scanf("%f", &e[i].salary);
     }
 
-    // Maximum Salary
-    printf("Maximum Salary of the Employee is %d.", maxSalary(e, 10));
+    sortBySalary(e,3);
+    
+    printf("\n******Sort By Salary******\n");
+    printStructArray(e,2);
 
     return 0;
 }

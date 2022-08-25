@@ -1,13 +1,16 @@
 #include <math.h>
+#include <string.h>
 
 struct Employee
 {
     int id;
-    char name[20];
+    char* name;
     float salary;
 };
 
-int maxSalary(struct Employee*, int );
+void sortBySalary(struct Employee*, int);
+void printStructArray(struct Employee*, int);
+int maxSalary(struct Employee *, int);
 void displayEmployee(struct Employee);
 int square(int);
 void fibonacciTillN(int);
@@ -34,16 +37,49 @@ void displayArray(int *, int);
 void sumOfAllElements(int *, int);
 void printReverse(int *, int);
 
+void sortBySalary(struct Employee* e, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i+1; j < n; j++)
+        {
+            if (e[i].salary > e[j].salary)
+            {
+                struct Employee* temp;
+                temp->id = e[i].id;
+                temp->name = e[i].name;
+                //strcpy(temp->name, e[i].name);
+                temp->salary = e[i].salary;
+
+                e[i].id = e[j].id;
+                e[i].name = e[j].name;
+                //strcpy(e[i].name, e[j].name);
+                e[i].salary = e[j].salary;
+
+                e[j].id = temp->id;
+                e[j].name = temp->name;
+                //strcpy(e[j].name, temp->name);
+                e[j].salary = temp->salary;
+            }
+        }
+    }
+}
+
+void printStructArray(struct Employee* e, int n)
+{
+    for (int i = 0; i < n; i++)
+        printf("ID -> %d, Name -> %s, Salary -> %d\n", e[i].id, e[i].name, e[i].salary);
+}
+
 int maxSalary(struct Employee *e, int n)
 {
-    int max = 0 ;
+    int max = 0;
     for (int i = 0; i < n; i++)
     {
         if (max < e[i].salary)
             max = e[i].salary;
     }
-
-    return max; 
+    return max;
 }
 
 void displayEmployee(struct Employee e)

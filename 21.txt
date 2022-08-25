@@ -88,8 +88,7 @@ int main()
     return 0;
 }
 
-5. Write a function to sort employees according to their salaries [ refer structure from
-question 1]
+5. Write a function to sort employees according to their salaries [ refer structure from question 1]
 
 
 
