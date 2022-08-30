@@ -1,23 +1,17 @@
 #include <stdio.h>
-#include "myfunctions.h"
+#include "array.h"
 
 int main()
 {
-    struct Employee e[10];
+    int n;
+    printf("Enter the size of the array : ");
+    scanf("%d", &n);
+    int a[n], b[n];
+    printf("Enter the %d elements : ", n);
+    inputArray(a, n);
 
-    // Take input
-    for (int i = 0; i < 10; i++)
-    {
-        printf("Enter the Employee-%d id : ", i);
-        scanf("%d", &e[i].id);
-        printf("Enter the Employee-%d name : ", i);
-        scanf("%s", &e[i].name);
-        printf("Enter the Employee-%d salary : ", i);
-        scanf("%f", &e[i].salary);
-    }
-
-    // Maximum Salary
-    printf("Maximum Salary of the Employee is %d.", maxSalary(e, 10));
-
+    copyAInB(a, b, n);
+    printf("Display b Array : ");
+    displayArray(b, n);
     return 0;
 }

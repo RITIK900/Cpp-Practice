@@ -1,0 +1,141 @@
+                                             Recursion in C Language
+
+1. Write a recursive function to print first N natural numbers.
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    printNumTillN(n);
+    return 0;
+}
+
+2. Write a recursive function to print first N natural numbers in reverse order
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    printNumTillNReverse(n);
+    return 0;
+}
+
+3. Write a recursive function to print first N odd natural numbers
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    print_N_Odd_Num(1,n);
+    return 0;
+}
+
+4. Write a recursive function to print first N odd natural numbers in reverse order
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    print_N_Odd_Num_Reverse(1,n);
+    return 0;
+}
+
+5. Write a recursive function to print first N even natural numbers
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    print_N_Even_Num(1,n);
+    return 0;
+}
+
+6. Write a recursive function to print first N even natural numbers in reverse order
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    print_N_Even_Num_Reverse(1,n);
+    return 0;
+}
+
+7. Write a recursive function to print squares of first N natural numbers
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    print_N_Squares(1,n);
+    return 0;
+}
+
+8. Write a recursive function to print binary of a given decimal number
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    decimalToBinary(n);
+    return 0;
+}
+
+9. Write a recursive function to print octal of a given decimal number
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    decimalToOctal(n);
+    return 0;
+}
+
+10. Write a recursive function to print reverse of a given number
+
+#include <stdio.h>
+#include "recursion.h"
+
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d",&n);
+    reverseNum(n);
+    return 0;
+}

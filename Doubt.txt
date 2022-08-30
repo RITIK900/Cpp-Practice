@@ -7,6 +7,7 @@ Assignment Number -> Question Number
 9 -> 7(Debug again)
 9 -> 10(Find root of quardratic equation...)
 
+14 -> 7 and 8(Find second largest and smallest number)
 (Assignment 15 & 16 => Completed...)
 
 20 -> 2
