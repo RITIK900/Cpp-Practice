@@ -9,9 +9,4 @@ int main()
     int a[n], b[n];
     printf("Enter the %d elements : ", n);
     inputArray(a, n);
-
-    copyAInB(a, b, n);
-    printf("Display b Array : ");
-    displayArray(b, n);
-    return 0;
 }
