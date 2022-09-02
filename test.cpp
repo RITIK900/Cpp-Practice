@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include "array.h"
+#include <iostream>
+#include "CPP_Func.h"
+using namespace std;
 
 int main()
 {
-    int n;
-    printf("Enter the size of the array : ");
-    scanf("%d", &n);
-    int a[n], b[n];
-    printf("Enter the %d elements : ", n);
-    inputArray(a, n);
+    
+    cout<< area(1);
+    return 0;
 }
