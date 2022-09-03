@@ -32,20 +32,21 @@ int main()
         playWithFriend();
         break;
 
-        case '2' : system("cls");
+        case '2' : //system("cls");
         printf("This is not completed yet, This feature will come in 2-3 days.");
         //playWithSmartComputer();
         break;
 
-        case '3' : system("cls");
+        case '3' : //system("cls");
         printf("This is not completed yet, This feature will come in 2-3 days.");
         //playWithEvilComputer();
-        getch();
 
         break;
         case '4' : system("cls");
         printf("Your choice is to exit from the game.\t ThankYou for playing Game...\n");
         printf("Press any key to exit from the game...");
+        getch();
+        break;
 
         default :
         system("cls");
@@ -221,71 +222,6 @@ int checkWin()
 {
     int count=0;
     // Check for Player1 -> 'O'
-    // Check row 1
-    for(int i=0;i<3;i++)
-            if(board[0][i] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count=0;
-    
-    // Check row 2
-    for(int i=0;i<3;i++)
-            if(board[1][i] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count = 0;
-
-    // Check row 3
-
-    for(int i=0;i<3;i++)
-            if(board[2][i] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count = 0;
-
-    // Check column 1
-
-    for(int i=0;i<3;i++)
-            if(board[i][0] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count = 0;
-
-    // Check column 2
-    for(int i=0;i<3;i++)
-            if(board[i][1] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count = 0;
-
-    // Check column 3
-    for(int i=0;i<3;i++)
-            if(board[i][2] == 'O')
-             count++;
-    
-    if(count == 3)
-        return 1;
-    count = 0;
-
-    // Check Diagonal 1
-    if(board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O')
-        return 1;
-
-    // Check Diagonal 2 
-    if(board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
-        return 1;
-
-    //*****Check for Player2 -> 'X'*****************************************************
     
     // Check row 1
     for(int i=0;i<3;i++)
@@ -293,7 +229,7 @@ int checkWin()
              count++;
     
     if(count == 3)
-        return 2;
+        return 1;
     count=0;
     
     // Check row 2
@@ -302,7 +238,7 @@ int checkWin()
              count++;
     
     if(count == 3)
-        return 2;
+        return 1;
     count = 0;
 
     // Check row 3
@@ -312,7 +248,7 @@ int checkWin()
              count++;
     
     if(count == 3)
-        return 2;
+        return 1;
     count = 0;
 
     // Check column 1
@@ -322,7 +258,7 @@ int checkWin()
              count++;
     
     if(count == 3)
-        return 2;
+        return 1;
     count = 0;
 
     // Check column 2
@@ -331,19 +267,86 @@ int checkWin()
              count++;
     
     if(count == 3)
-        return 2;
+        return 1;
     count = 0;
 
     // Check Diagonal 1 
     if(board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X')
-        return 2;
+        return 1;
 
     // Check Diagonal 2 
     if(board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
-        return 2; 
+        return 1; 
 
+
+    //*****Check for Player2 -> 'O'*****************************************************
+
+    // Check row 1
+    for(int i=0;i<3;i++)
+            if(board[0][i] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count=0;
+    
+    // Check row 2
+    for(int i=0;i<3;i++)
+            if(board[1][i] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count = 0;
+
+    // Check row 3
+
+    for(int i=0;i<3;i++)
+            if(board[2][i] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count = 0;
+
+    // Check column 1
+
+    for(int i=0;i<3;i++)
+            if(board[i][0] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count = 0;
+
+    // Check column 2
+    for(int i=0;i<3;i++)
+            if(board[i][1] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count = 0;
+
+    // Check column 3
+    for(int i=0;i<3;i++)
+            if(board[i][2] == 'O')
+             count++;
+    
+    if(count == 3)
+        return 2;
+    count = 0;
+
+    // Check Diagonal 1
+    if(board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O')
+        return 2;
+
+    // Check Diagonal 2 
+    if(board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
+        return 2;
 
     return 0;
+
 }
 
 void reset()
