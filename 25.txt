@@ -1,0 +1,184 @@
+                                Classes and Objects
+
+1. Define a class Complex to represent a complex number. Declare instance member
+variables to store real and imaginary part of a complex number, also define instance
+member functions to set values of complex number and print values of complex
+number
+2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate
+number of instance member variables and also define instance member functions to
+set values for time and display values of time.
+3. Define a class Factorial and define an instance member function to find the Factorial
+of a number using class.
+4. Define a class LargestNumber and define an instance member function to find the
+Largest of three Numbers using the class.
+5. Define a class ReverseNumber and define an instance member function to find
+Reverse of a Number using class.
+6. Define a class Square to find the square of a number and write a C++ program to
+Count number of times a function is called.
+
+#include <iostream>
+using namespace std;
+
+class Square
+{
+    int len;
+    int count = 0;
+
+public:
+    void setLine(int x)
+    {
+        len = x;
+    }
+
+    int area()
+    {
+        count++;
+        return len * len;
+    }
+};
+
+int main()
+{
+    Square s;
+    s.setLine(2);
+    cout << "The area of the square is " << s.area() << ".";
+    return 0;
+}
+
+7. Define a class Greatest and define instance member function to find Largest among
+3 numbers using classes.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class Greatest
+{
+private:
+    int a, b, c, max = INT32_MIN;
+
+public:
+    void setABC(int x, int y, int z)
+    {
+        a = x;
+        if (a > max)
+            max = a;
+        b = y;
+        if (b > max)
+            max = b;
+        c = z;
+        if (c > max)
+            max = c;
+    }
+    int getmax()
+    {
+        return max;
+    }
+};
+
+int main()
+{
+    Greatest g1;
+    // Greatest g2;
+    g1.setABC(5, 4, 7);
+    // g2.setABC(5,12,7);
+    cout << "The Greatest number is " << g1.getmax() << ".";
+    // cout<<"The Greatest number is "<<g2.getmax();
+    return 0;
+}
+
+8. Define a class Rectangle and define an instance member function to find the area of
+the rectangle.
+
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+    int len, breadth;
+    int count = 0;
+
+public:
+    void setDimensions(int x, int y)
+    {
+        len = x;
+        breadth = y;
+    }
+
+    int area()
+    {
+        count++;
+        return len * breadth;
+    }
+};
+
+int main()
+{
+    Rectangle s;
+    s.setDimensions(3, 4);
+    s.area();
+    cout << "The area of the rectangle is " << s.area() << ".";
+    return 0;
+}
+
+9. Define a class Circle and define an instance member function to find the area of the
+circle.
+
+#include <iostream>
+#define PI 3.14
+using namespace std;
+
+class Circle
+{
+    int r;
+
+public:
+    void setRadius(int x)
+    {
+        r = x;
+    }
+
+    float area()
+    {
+        return PI * r * r;
+    }
+};
+
+int main()
+{
+    Circle s;
+    s.setRadius(2);
+    s.area();
+    cout << "The area of the circle is " << s.area() << ".";
+    return 0;
+}
+
+10. Define a class Area and define instance member functions to find the area of the
+different shapes like square, rectangle , circle etc.
+
+#include <iostream>
+#define PI 3.14
+using namespace std;
+
+class Area
+{
+public:
+    float area(float r)
+    {
+        return PI * r * r;
+    }
+    int area(int l, int b)
+    {
+        return l * b;
+    }
+};
+
+int main()
+{
+    Area a;
+    cout << "The area of the circle is " << a.area(3.0) << ".\n";
+    cout << "The area of the square is " << a.area(3, 3) << ".\n";
+    cout << "The area of the rectangle is " << a.area(3, 4) << ".\n";
+    return 0;
+}

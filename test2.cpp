@@ -1,32 +1,30 @@
 #include <iostream>
-
 using namespace std;
 
-class test2
+class Rectangle
 {
-public:
-      void printD()
-    {
-        cout << "I am in base class.";
-    }
-};
+    int len, breadth;
+    int count = 0;
 
-class derieved : public test2
-{
 public:
-   /*  void printD()
+    void setDimensions(int x, int y)
     {
-        cout << "I am in derieved class.";
-    }*/
+        len = x;
+        breadth = y;
+    }
+
+    int area()
+    {
+        count++;
+        return len * breadth;
+    }
 };
 
 int main()
 {
-    
-  //  derieved *a = new derieved();
-  
-  //  a->printD();
-  derieved a;
-  a.printD();
+    Rectangle s;
+    s.setDimensions(3, 4);
+    s.area();
+    cout << "The area of the rectangle is " << s.area() << ".";
     return 0;
 }
