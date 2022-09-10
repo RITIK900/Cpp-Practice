@@ -1,33 +1,68 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
-class ReverseNumber
+class Complex
 {
 private:
-    int num, revNum = 0;
+    int a;
+    int b;
 
 public:
-    void setNum(int x)
+    Complex(/* args */);
+    void setData(int x, int y)
     {
-        num = x;
-        while (x > 0)
-        {
-            revNum = revNum * 10 + x % 10;
-            x = x / 10;
-        }
+        a = x;
+        b = y;
     }
-    int getReverse()
+    void showData()
     {
-        return revNum;
+        cout << a << " + i" << b;
     }
+    Complex add(Complex c)
+    {
+        Complex temp;
+        temp.a = a + c.a;
+        temp.b = b + c.b;
+        return temp;
+    }
+    void addTwo(Complex c1, Complex c2)
+    {
+        a = c1.a + c2.a;
+        b = c1.b + c2.b;
+    }
+    ~Complex();
 };
+
+Complex::Complex(/* args */)
+{
+}
+
+Complex::~Complex()
+{
+}
 
 int main()
 {
-    ReverseNumber r;
-    r.setNum(123);
-    cout << "The reverse of the number is " << r.getReverse() << ".";
+    Complex c1, c2, c3, c4;
+    c1.setData(1, 2);
+    c2.setData(3, 4);
+    cout << "The complex-1 data is ";
+    c1.showData();
+    cout << endl;
+    cout << "The complex-2 data is ";
+    c2.showData();
+    cout << endl;
+    cout << "Method-1 of adding : \n";
+    cout << "The sum of complex-1 and complex-2 is ";
+    c3 = c1.add(c2);
+    c3.showData();
+    cout << endl;
+
+    cout << "Method-2 of adding : \n";
+    cout << "The sum of complex-1 and complex-2 is ";
+    c4.addTwo(c1, c2);
+    c4.showData();
+    cout << endl;
+
     return 0;
 }
