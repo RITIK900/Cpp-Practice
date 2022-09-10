@@ -1,30 +1,63 @@
 #include <iostream>
 using namespace std;
 
-class Student
+class Bill
 {
 private:
     string name;
-    int rollNo;
-    int age;
+    string billNo;
+    int unit;
 
 public:
-    Student(string n, int r, int a)
+    void get(string n, string b, float u)
     {
         name = n;
-        rollNo = r;
-        age = a;
+        billNo = b;
+        unit = u;
     }
-    void showInfo()
+    void allDetail()
     {
-        cout << "Roll number : " << rollNo << ", Name : " << name << ", Age : " << age << endl;
+        cout << "Bill Number : " << billNo << " | Name : " << name << " | Units : " << unit << endl;
+    }
+    float calculateBill()
+    {
+        int t = unit;
+        float amount = 0.0;
+        if (t <= 100)
+        {
+            return 1.20 * unit;
+        }
+        else
+        {
+            amount = 100 * 1.20;
+            t = t - 100;
+            if (t <= 100)
+            {
+                amount += t * 2;
+                return amount;
+            }
+            else
+            {
+                amount += 100 * 2;
+                t = t - 100;
+                if (t <= 100)
+                {
+                    amount += t * 3;
+                    return amount;
+                }
+            }
+        }
     }
 };
 
 int main()
 {
-    Student s("Rom som", 12, 17);
-    s.showInfo();
+    Bill customer;
+    customer.get("Rona Tim", "BN0006", 99);
+
+    cout << "\t\t __________Bill__________\n";
+    customer.allDetail();
+    cout << "\t\tTotal amount : " << customer.calculateBill();
 
     return 0;
 }

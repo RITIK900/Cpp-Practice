@@ -300,5 +300,100 @@ calculateBill() function to calculate electricity bill using below tariff :
 Upto 100 unit RS. 1.20 per unit
 From 100 to 200 unit RS. 2 per unit
 Above 200 units RS. 3 per unit.
+
+#include <iostream>
+using namespace std;
+
+class Bill
+{
+private:
+    string name;
+    string billNo;
+    int unit;
+
+public:
+    void get(string n, string b, float u)
+    {
+        name = n;
+        billNo = b;
+        unit = u;
+    }
+    void allDetail()
+    {
+        cout << "Bill Number : " << billNo << " | Name : " << name << " | Units : " << unit << endl;
+    }
+    float calculateBill()
+    {
+        int t = unit;
+        float amount = 0.0;
+        if (t <= 100)
+        {
+            return 1.20 * unit;
+        }
+        else
+        {
+            amount = 100 * 1.20;
+            t = t - 100;
+            if (t <= 100)
+            {
+                amount += t * 2;
+                return amount;
+            }
+            else
+            {
+                amount += 100 * 2;
+                t = t - 100;
+                if (t <= 100)
+                {
+                    amount += t * 3;
+                    return amount;
+                }
+            }
+        }
+    }
+};
+
+int main()
+{
+    Bill customer;
+    customer.get("Rona Tim", "BN0006", 99);
+
+    cout << "\t\t __________Bill__________\n";
+    customer.allDetail();
+    cout << "\t\tTotal amount : " << customer.calculateBill();
+
+    return 0;
+}
+
 10. Define a class StaticCount and create a static variable. Increment this variable in a
 function and call this 3 times and display the result.
+
+#include <iostream>
+using namespace std;
+
+class StaticCount
+{
+private:
+    static int s;
+
+public:
+    void call()
+    {
+        s++;
+    }
+    int showValue()
+    {
+        return s;
+    }
+};
+int StaticCount::s = 0;
+
+int main()
+{
+    StaticCount s;
+    s.call();
+    s.call();
+    s.call();
+    cout << "You call the function " << s.showValue() << " times.";
+    return 0;
+}
