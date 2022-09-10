@@ -1,25 +1,33 @@
 #include <iostream>
-#define PI 3.14
+#include <cmath>
+
 using namespace std;
 
-class Area
+class ReverseNumber
 {
+private:
+    int num, revNum = 0;
+
 public:
-    float area(float r)
+    void setNum(int x)
     {
-        return PI * r * r;
+        num = x;
+        while (x > 0)
+        {
+            revNum = revNum * 10 + x % 10;
+            x = x / 10;
+        }
     }
-    int area(int l, int b)
+    int getReverse()
     {
-        return l * b;
+        return revNum;
     }
 };
 
 int main()
 {
-    Area a;
-    cout << "The area of the circle is " << a.area(3.0) << ".\n";
-    cout << "The area of the square is " << a.area(3, 3) << ".\n";
-    cout << "The area of the rectangle is " << a.area(3, 4) << ".\n";
+    ReverseNumber r;
+    r.setNum(123);
+    cout << "The reverse of the number is " << r.getReverse() << ".";
     return 0;
 }

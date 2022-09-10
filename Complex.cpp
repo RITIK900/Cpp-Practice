@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 class Complex
@@ -6,6 +6,7 @@ class Complex
 private:
     int real;
     int img;
+
 public:
     Complex(/* args */);
     void setData(int a, int b)
@@ -15,7 +16,7 @@ public:
     }
     void display()
     {
-        cout<<real<<" + i"<<img;
+        cout << real << " + i" << img;
     }
     ~Complex();
 };
@@ -30,8 +31,8 @@ Complex::~Complex()
 
 int main()
 {
-    Complex c1,c2;
-    c1.setData(1,2);
+    Complex c1, c2;
+    c1.setData(1, 2);
     c1.display();
     return 0;
 }

@@ -3,16 +3,174 @@
 1. Define a class Complex to represent a complex number. Declare instance member
 variables to store real and imaginary part of a complex number, also define instance
 member functions to set values of complex number and print values of complex
-number
+number.
+
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+private:
+    int real;
+    int img;
+
+public:
+    Complex(/* args */);
+    void setData(int a, int b)
+    {
+        real = a;
+        img = b;
+    }
+    void display()
+    {
+        cout << real << " + i" << img;
+    }
+    ~Complex();
+};
+
+Complex::Complex(/* args */)
+{
+}
+
+Complex::~Complex()
+{
+}
+
+int main()
+{
+    Complex c1, c2;
+    c1.setData(1, 2);
+    c1.display();
+    return 0;
+}
+
 2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate
 number of instance member variables and also define instance member functions to
 set values for time and display values of time.
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+private:
+    int hours;
+    int minutes;
+    int seconds;
+
+public:
+    Time(/* args */);
+    void setTime(int h, int m, int s)
+    {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+    void display()
+    {
+        cout << hours << " hours " << minutes << " min " << seconds << " sec" << endl;
+    }
+    ~Time();
+};
+
+Time::Time(/* args */)
+{
+}
+
+Time::~Time()
+{
+}
+
+int main()
+{
+    Time c1, c2;
+    c1.setTime(3, 45, 20);
+    c1.display();
+    return 0;
+}
+
 3. Define a class Factorial and define an instance member function to find the Factorial
 of a number using class.
 4. Define a class LargestNumber and define an instance member function to find the
 Largest of three Numbers using the class.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class Largest
+{
+private:
+    int a, b, c, max = INT32_MIN;
+
+public:
+    void setABC(int x, int y, int z)
+    {
+        a = x;
+        if (a > max)
+            max = a;
+        b = y;
+        if (b > max)
+            max = b;
+        c = z;
+        if (c > max)
+            max = c;
+    }
+    int getmax()
+    {
+        return max;
+    }
+};
+
+int main()
+{
+    class Largest g1;
+    // Greatest g2;
+    g1.setABC(5, 4, 7);
+    // g2.setABC(5,12,7);
+    cout << "The Greatest number is " << g1.getmax() << ".";
+    // cout<<"The Greatest number is "<<g2.getmax();
+    return 0;
+}
+
 5. Define a class ReverseNumber and define an instance member function to find
 Reverse of a Number using class.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class ReverseNumber
+{
+private:
+    int num, revNum = 0;
+
+public:
+    void setNum(int x)
+    {
+        num = x;
+        while (x > 0)
+        {
+            revNum = revNum * 10 + x % 10;
+            x = x / 10;
+        }
+    }
+    int getReverse()
+    {
+        return revNum;
+    }
+};
+
+int main()
+{
+    ReverseNumber r;
+    r.setNum(123);
+    cout << "The reverse of the number is " << r.getReverse() << ".";
+    return 0;
+}
+
 6. Define a class Square to find the square of a number and write a C++ program to
 Count number of times a function is called.
 
