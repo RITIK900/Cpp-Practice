@@ -149,19 +149,152 @@ int main()
 
 3. Define a class Cube and calculate Volume of Cube and initialise it using constructor.
 
+#include <iostream>
+using namespace std;
 
+class Cube
+{
+private:
+    int a;
+
+public:
+    Cube(int l)
+    {
+        a = l;
+    }
+    void showDimension()
+    {
+        cout << "Length : " << a << ", Breadth : " << a << ", Height : " << a << endl;
+    }
+    int volume()
+    {
+        return a * a * a;
+    }
+    ~Cube();
+};
+
+Cube::~Cube()
+{
+}
+
+int main()
+{
+    Cube c1(2);
+    c1.showDimension();
+    cout << "The Volume of the cube is " << c1.volume() << ".";
+
+    return 0;
+}
 
 4. Define a class Counter and Write a program to Show Counter using Constructor.
-5. Define a class Date and write a program to Display Dateand initialise date object
+
+
+
+5. Define a class Date and write a program to Display Date and initialise date object
 using Constructors.
+
+#include <iostream>
+using namespace std;
+
+class Date
+{
+private:
+    int day, month, year;
+
+public:
+    Date(int d, int m, int y)
+    {
+        day = d;
+        month = m;
+        year = y;
+    }
+    void showDate()
+    {
+        cout << "Day : " << day << ", Month : " << month << ", Year : " << year << endl;
+    }
+};
+
+int main()
+{
+    Date c1(01, 01, 2022);
+    c1.showDate();
+
+    return 0;
+}
+
 6. Define a class student and write a program to enter student details using constructor
 and define member function to display all the details.
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+private:
+    string name;
+    int rollNo;
+    int age;
+
+public:
+    Student(string n, int r, int a)
+    {
+        name = n;
+        rollNo = r;
+        age = a;
+    }
+    void showInfo()
+    {
+        cout << "Roll number : " << rollNo << ", Name : " << name << ", Age : " << age << endl;
+    }
+};
+
+int main()
+{
+    Student s("Rom som", 12, 17);
+    s.showInfo();
+
+    return 0;
+}
+
 7. Define a class Box and write a program to enter length, breadth and height and
 initialise objects using constructor also define member functions to calculate volume
 of the box.
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int length, breadth, height;
+
+public:
+    void setDimensions(int x, int y, int z)
+    {
+        length = x;
+        breadth = y;
+        height = z;
+    }
+
+    int volume()
+    {
+        return length * breadth * height;
+    }
+};
+
+int main()
+{
+    Box b;
+    b.setDimensions(3, 4, 4);
+    cout << "The area of the Box is " << b.volume() << ".";
+    return 0;
+}
+
 8. Define a class Bank and define member functions to read principal , rate of interest
 and year. Another member functions to calculate simple interest and display it.
 Initialise all details using constructor.
+
+
+
 9. Define a class Bill and define its member function get() to take detail of customer ,
 calculateBill() function to calculate electricity bill using below tariff :
 Upto 100 unit RS. 1.20 per unit

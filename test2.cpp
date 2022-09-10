@@ -1,30 +1,28 @@
 #include <iostream>
 using namespace std;
 
-class Rectangle
+class Bank
 {
-    int len, breadth;
-    int count = 0;
+    int amount;
 
 public:
-    void setDimensions(int x, int y)
+    void setDimensions(int x, int y, int z)
     {
-        len = x;
+        length = x;
         breadth = y;
+        height = z;
     }
 
-    int area()
+    int readPrinciple()
     {
-        count++;
-        return len * breadth;
+        return amount;
     }
 };
 
 int main()
 {
-    Rectangle s;
-    s.setDimensions(3, 4);
-    s.area();
-    cout << "The area of the rectangle is " << s.area() << ".";
+    Box b;
+    b.setDimensions(3, 4, 4);
+    cout << "The area of the Box is " << b.volume() << ".";
     return 0;
 }

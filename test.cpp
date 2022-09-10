@@ -1,68 +1,30 @@
 #include <iostream>
 using namespace std;
 
-class Complex
+class Student
 {
 private:
-    int a;
-    int b;
+    string name;
+    int rollNo;
+    int age;
 
 public:
-    Complex(/* args */);
-    void setData(int x, int y)
+    Student(string n, int r, int a)
     {
-        a = x;
-        b = y;
+        name = n;
+        rollNo = r;
+        age = a;
     }
-    void showData()
+    void showInfo()
     {
-        cout << a << " + i" << b;
+        cout << "Roll number : " << rollNo << ", Name : " << name << ", Age : " << age << endl;
     }
-    Complex add(Complex c)
-    {
-        Complex temp;
-        temp.a = a + c.a;
-        temp.b = b + c.b;
-        return temp;
-    }
-    void addTwo(Complex c1, Complex c2)
-    {
-        a = c1.a + c2.a;
-        b = c1.b + c2.b;
-    }
-    ~Complex();
 };
-
-Complex::Complex(/* args */)
-{
-}
-
-Complex::~Complex()
-{
-}
 
 int main()
 {
-    Complex c1, c2, c3, c4;
-    c1.setData(1, 2);
-    c2.setData(3, 4);
-    cout << "The complex-1 data is ";
-    c1.showData();
-    cout << endl;
-    cout << "The complex-2 data is ";
-    c2.showData();
-    cout << endl;
-    cout << "Method-1 of adding : \n";
-    cout << "The sum of complex-1 and complex-2 is ";
-    c3 = c1.add(c2);
-    c3.showData();
-    cout << endl;
-
-    cout << "Method-2 of adding : \n";
-    cout << "The sum of complex-1 and complex-2 is ";
-    c4.addTwo(c1, c2);
-    c4.showData();
-    cout << endl;
+    Student s("Rom som", 12, 17);
+    s.showInfo();
 
     return 0;
 }
