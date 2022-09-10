@@ -127,6 +127,33 @@ int add(int a,int b,int c)
 8. Define overloaded functions to calculate area of circle, area of rectangle and area of
 triangle.
 
+#include <iostream>
+using namespace std;
+
+#define PI 3.14
+float area(float r)
+{
+    return PI*r*r;
+}
+int area(int l,int b)
+{
+    return l*b;
+}
+float area(float base, float height)
+{
+    return 0.5*base*height;
+}
+
+
+int main()
+{
+    cout<<"Area of the circle is "<<area(1)<<endl;
+    cout<<"Area of the Rectangle is "<<area(2,3)<<endl;
+    cout<<"Area of the Triangle is "<<area(2.0,3.0)<<endl;
+
+    return 0;
+}
+
 9. Write functions using function overloading to find a maximum of two numbers and
 both the numbers can be integer or real.
 10. Write functions using function overloading to add two numbers having different data

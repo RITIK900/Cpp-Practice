@@ -1,63 +1,26 @@
 #include <iostream>
 using namespace std;
 
-class Bill
+#define PI 3.14
+float area(float r)
 {
-private:
-    string name;
-    string billNo;
-    int unit;
+    return PI*r*r;
+}
+int area(int l,int b)
+{
+    return l*b;
+}
+float area(float base, float height)
+{
+    return 0.5*base*height;
+}
 
-public:
-    void get(string n, string b, float u)
-    {
-        name = n;
-        billNo = b;
-        unit = u;
-    }
-    void allDetail()
-    {
-        cout << "Bill Number : " << billNo << " | Name : " << name << " | Units : " << unit << endl;
-    }
-    float calculateBill()
-    {
-        int t = unit;
-        float amount = 0.0;
-        if (t <= 100)
-        {
-            return 1.20 * unit;
-        }
-        else
-        {
-            amount = 100 * 1.20;
-            t = t - 100;
-            if (t <= 100)
-            {
-                amount += t * 2;
-                return amount;
-            }
-            else
-            {
-                amount += 100 * 2;
-                t = t - 100;
-                if (t <= 100)
-                {
-                    amount += t * 3;
-                    return amount;
-                }
-            }
-        }
-    }
-};
 
 int main()
 {
-    Bill customer;
-    customer.get("Rona Tim", "BN0006", 99);
-
-    cout << "\t\t __________Bill__________\n";
-    customer.allDetail();
-    cout << "\t\tTotal amount : " << customer.calculateBill();
+    cout<<"Area of the circle is "<<area(1)<<endl;
+    cout<<"Area of the Rectangle is "<<area(2,3)<<endl;
+    cout<<"Area of the Triangle is "<<area(2.0,3.0)<<endl;
 
     return 0;
 }
