@@ -81,6 +81,10 @@ int main()
     cout<<endl;
     person p3 = p1+ p2;
     cout<<endl;
+    person p4;
+    p4(34, 54);
+    cout<<p4;
+    cout<<endl;
 
     (++p3).display();
     cout<<endl;
